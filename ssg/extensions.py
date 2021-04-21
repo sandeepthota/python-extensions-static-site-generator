@@ -10,8 +10,7 @@ def load_module(directory, name):
 
 
 def load_directory(directory):
-    pathlist = Path(directory).rglob('*.py')
-    for path in pathlist:
+    for path in directory.rglob('*.py'):
         load_module(directory.as_posix(), path.stem)
 
 
